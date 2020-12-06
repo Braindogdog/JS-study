@@ -1,38 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
 </body>
 
 <script>
 
+    
+
+
     // 函数作用域      块作用域  let  consl
 
-    (function Method3(num)  {
-        var a = 2
-        var b = 'lala'
-        console.log('Method3',num+a)
-    })(3)
+    // (function method3(num)  {
+    //     var a = 2
+    //     var b = 'lala'
+    //     // console.log('Method3',num+a)
+    // })(3)
+    var a = [];
+
+        for(let i = 1;i<=5;i++) {
+            // console.log(i)
+           a[i] =  function() {
+                console.log(i)
+            }
+        
+        }
+        a[1]()
+        a[2]()
+        a[3]()
+      
+var b = [];
+        for(var i = 1;i<=5;i++) {
+            // console.log(i)
+          b[i] =  function() {
+                console.log(i)
+            }
+           
+         
+        }
+        b[1]()
+        b[2]()
+        b[3]()
+
 
 
 
     //函数表达式
-    var hello = function Method2() {
+    var hello = function method2() {
 
         var a = 1
         var b = 'heihei'
-        console.log('Method2')
+        // console.log('Method2')
         return hello
     }
 
 
     //函数声明
-    function Method1() {
+    function method1() {
         var a = 1
         var b = 'haha'
         console.log('Method1')
@@ -41,11 +72,12 @@
 
 
     for (var i = 1; i <= 5; i++) {
-        console.log(i*1000)
-       setTimeout(function timer() {
-           console.log(i)
-       },i*1000);
+        // console.log(i * 1000)
+        setTimeout(function timer() {
+            // console.log(i)
+        }, i * 1000);
     }
 
 </script>
+
 </html>
