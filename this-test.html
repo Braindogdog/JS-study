@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="haha">hahah</div>
+</body>
+
+<script>
+    //fn1 fn3  fn2都没有指向任何对象,所以他们的默认对象为Window,
+    //但fn2使用了'use strict' 严格模式,所以它的this-->undefined
+    // function fn1 () {
+    //     console.log(this)//Window
+    //     fn3()
+    // }
+    // function fn3() {
+    //     console.log("fn3",this) //Window
+    // }
+
+    // function fn2() {
+    //     'use strict'
+    //     console.log("fn2",this)//undefined
+    // }
+    // fn1()
+    // fn2()
+
+    // 'use strict'
+    // function fn4() {
+    //     console.log("fn4",this)
+    // }
+    // fn4()
+
+
+    // function fn5() {
+
+    //     'use strict'
+    //     fn6()
+    // }
+
+    // function fn6() {
+    //     console.log('fn6',this) //Window
+    // }
+    // fn5()
+
+
+    function fn7() {}
+    fn7.prototype.name = 'liangpeng'
+    fn7.prototype.age = '30'
+    function fn() {
+        console.log(this.name)
+    }
+    let obj = new fn7()
+    obj.func = fn
+
+    var obj2 = {
+        name:"haha",
+        b:obj
+    }
+    obj2.b.func()
+
+  
+
+</script>
+</html>
